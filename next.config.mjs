@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['admin-panel.meowaesthetics.com'],
     formats: ['image/webp'],
+     unoptimized: true
   },
 };
 
