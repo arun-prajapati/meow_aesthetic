@@ -1,6 +1,7 @@
 "use client"
 import Header from "@/components/header/Header"
 import TypographyH1 from "@/components/typography/TypographyH1"
+import TypographyH4 from "@/components/typography/TypographyH4"
 import TypographyP from "@/components/typography/TypographyP"
 import { Button } from "@/components/ui/button"
 import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi"
@@ -39,15 +40,17 @@ const HeroSection = () => {
 
                                         < div className="absolute top-0 left-0 w-full h-full bg-black opacity-50" />
 
-                                        < div className="container h-screen flex flex-col justify-center gap-6 text-white relative z-30 2xl:px-0" >
+                                        < div className="container h-screen flex flex-col justify-center gap-3 lg:gap-5 text-white relative z-30 2xl:px-0" >
 
-                                            <TypographyP className="flex items-center gap-4 mt-10">
+                                            <TypographyH4 className="flex items-center mt-10">
                                                 {heroSectionData?.small_title}
-                                            </TypographyP>
+                                            </TypographyH4>
                                             <TypographyH1 className="xl:w-[75%] font-playfairdisplay text-3xl leading-[45px] lg:leading-[60px] 2xl:text-[75px] 2xl:leading-[100px] font-normal italic">
                                                 {heroSectionData?.big_title}
-                                                {/* One-Stop <span className="font-bold">Aesthetic Clinic</span> for <span className="font-bold">Effective</span> & <span className="font-bold">Natural</span> Results */}
                                             </TypographyH1>
+                                            <TypographyP className="flex items-center text-sm sm:text-lg">
+                                                {heroSectionData?.description}
+                                            </TypographyP>
 
                                             {/* buttons */}
                                             < div className="flex items-center gap-5" >

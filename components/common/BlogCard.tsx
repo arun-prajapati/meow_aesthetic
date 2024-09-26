@@ -25,14 +25,15 @@ export function BlogCard() {
                 {listOfBlogs.length > 0 ? listOfBlogs.map((card, cardindex) => (
                     <Link href={card?.title} key={cardindex} >
                         <Card
-                            className="relative rounded-sm bg-white min-h-[400px] lg:min-h-[400px] lg:max-h-[450px] min-w-[280px] lg:max-w-[360px] shadow-2xl">
+                            className="relative rounded-sm bg-white min-h-[400px] lg:min-h-[400px] lg:max-h-[500px] min-w-[280px] lg:max-w-[360px] shadow-2xl">
                             <CardHeader className="p-0">
                                 <Image
-                                    src={kp}
+                                    src={card?.image ? `https://admin-panel.meowaesthetics.com/${card?.image}` : kp}
                                     alt={card?.title}
                                     width={400}
-                                    height={150}
-                                    className="rounded-sm w-full"
+                                    height={400}
+                                    quality={100}
+                                    className="rounded-sm min-h-[200px] object-cover max-h-[200px]"
                                 />
                             </CardHeader>
 

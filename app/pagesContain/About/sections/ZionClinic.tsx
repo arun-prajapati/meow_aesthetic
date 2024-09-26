@@ -1,7 +1,7 @@
 "use client"
 import TypographyP from "@/components/typography/TypographyP"
 import Image from "next/image"
-import clinic from "@/public/assests/aboutzion.jpg"
+import doctor from "@/public/assests/aboutzion.jpg"
 import { DoctorList } from "@/lib/hooks/DoctorList"
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -19,8 +19,11 @@ const ZionClinic = () => {
                             <>
                                 <div className="order-2 lg:order-1" key={doctorIndex}>
                                     <Image
-                                        src={clinic}
-                                        alt="Dr Meowi"
+                                        src={doctorsData?.image ? `https://admin-panel.meowaesthetics.com/${doctorsData?.image}` : doctor}
+                                        quality={100}
+                                        width={500}
+                                        height={500}
+                                        alt="Dr Meow"
                                         className="rounded-lg w-full h-full lg:max-w-[605px]"
                                     />
                                 </div>

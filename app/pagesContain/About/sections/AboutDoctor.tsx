@@ -27,8 +27,10 @@ const AboutDoctor = () => {
                                 </div>
                                 <div className="flex justify-end">
                                     <Image
-                                        src={doctor}
+                                        src={doctorsData?.image ? `https://admin-panel.meowaesthetics.com/${doctorsData?.image}` : doctor}
                                         quality={100}
+                                        width={500}
+                                        height={500}
                                         alt="Dr Meow"
                                         className="rounded-lg w-full h-full lg:max-w-[555px]"
                                     />

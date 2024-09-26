@@ -34,11 +34,12 @@ const DetailedBlogSidebar = () => {
                                             <Link href={`${blog?.slug}?slug=${blog.slug}`}>
                                                 <CardHeader className="p-0">
                                                     <Image
-                                                        src={kp}
-                                                        alt="Anti-ageing Treatments"
+                                                        src={blog?.image ? `https://admin-panel.meowaesthetics.com/${blog?.image}` : kp}
+                                                        alt={blog?.title}
                                                         width={400}
-                                                        height={150}
-                                                        className="w-full"
+                                                        height={400}
+                                                        quality={100}
+                                                        className="rounded-sm min-h-[200px] object-cover max-h-[200px]"
                                                     />
                                                 </CardHeader>
                                             </Link>
