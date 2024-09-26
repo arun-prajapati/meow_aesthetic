@@ -28,7 +28,7 @@ const MainFooter = () => {
                             <li><a href="/about-us">About</a></li>
                             <li><a href="/signature-tratments">Services</a></li>
                             <li><a href="/key-procedures">Key Procedures</a></li>
-                            <li><a href="/blogs">Blogs</a></li>
+                            <li><a href="/blog">Blogs</a></li>
                         </ul>
                     </div>
                     <div className="flex flex-col gap-2">
