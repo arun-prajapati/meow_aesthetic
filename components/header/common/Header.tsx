@@ -16,7 +16,7 @@ import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi";
 
 const Header = () => {
 
-    const { listofVideos } = VideoListOfHomePage() //api
+    const { MobileNumber } = VideoListOfHomePage() //api
     return (
         <header className="w-full">
 
@@ -41,21 +41,14 @@ const Header = () => {
 
                     {/* --call for large-screen-- */}
                     <div className="hidden lg:flex items-center gap-2">
-                        {listofVideos?.map((serviceSection, serviceindex) => (
-                            <>
-                                {serviceSection?.type === "contact_us" && <>
-                                    <div className="flex flex-col items-end" key={serviceindex}>
-                                        <Link href='/'>
-                                            <span className="text-currentlink text-xs font-semibold">CALL US AT</span>
-                                        </Link>
-                                        <TypographyP className="text-2xl font-semibold">
-                                            {serviceSection?.mobile}
-                                        </TypographyP>
-                                    </div>
-                                </>
-                                }
-                            </>
-                        ))}
+                        <div className="flex flex-col items-end">
+                            <Link href='/'>
+                                <span className="text-currentlink text-xs font-semibold">CALL US AT</span>
+                            </Link>
+                            <TypographyP className="text-2xl font-semibold">
+                                {MobileNumber}
+                            </TypographyP>
+                        </div>
                         <TbPhoneCall className="text-currentlink w-8 h-8 p-1" />
                     </div>
 
