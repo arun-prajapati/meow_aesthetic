@@ -1,13 +1,13 @@
 "use client"
 import TypographyP from "@/components/typography/TypographyP"
 import Image from "next/image"
-import doctor from "@/public/assests/aboutzion.jpg"
+import meowDoctor from "@/public/assests/aboutzion.jpg"
 import { DoctorList } from "@/lib/hooks/DoctorList"
 import { Skeleton } from "@/components/ui/skeleton"
 
 const ZionClinic = () => {
 
-    const { listOfDoctors, isLoading } = DoctorList()
+    const { listOfDoctors } = DoctorList()
 
     return (
         <section>
@@ -19,7 +19,7 @@ const ZionClinic = () => {
                             <>
                                 <div className="order-2 lg:order-1" key={doctorIndex}>
                                     <Image
-                                        src={doctorsData?.image ? `https://admin-panel.meowaesthetics.com/${doctorsData?.image}` : doctor}
+                                        src={doctorsData?.image ? `https://admin-panel.meowaesthetics.com/${doctorsData?.image}` : meowDoctor}
                                         quality={100}
                                         width={500}
                                         height={500}

@@ -5,12 +5,11 @@ import TypographyP from "@/components/typography/TypographyP"
 import Image from "next/image"
 import keyprocedures from "@/public/assests/keyprocedures.webp"
 import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi"
-import { TbLoaderQuarter } from "react-icons/tb"
 import { Skeleton } from "@/components/ui/skeleton"
 
 const KeyProceduresSection = () => {
 
-    const { listofVideos, isLoading } = VideoListOfHomePage()
+    const { listofVideos } = VideoListOfHomePage()
 
     return (
         <section className="bg-white px-3">
@@ -69,7 +68,7 @@ const KeyProceduresSection = () => {
                     </>
                 ))
                     :
-                    <Skeleton className="m-auto w-[95%] h-[80vh] bg-slate-200 rounded-2xl"/>
+                    <Skeleton className="m-auto w-[95%] h-[80vh] bg-slate-200 rounded-2xl" />
                 }
             </div>
         </section>

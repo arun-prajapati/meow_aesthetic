@@ -1,11 +1,16 @@
+"use client"
 import Image from "next/image"
 import meowlogo from "@/public/assests/meowlogo.png"
 import { SlLocationPin } from "react-icons/sl"
 import { TbPhoneCall } from "react-icons/tb"
 import { LuClock } from "react-icons/lu"
 import TypographyP from "@/components/typography/TypographyP"
+import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi"
 
 const Footer = () => {
+
+    const { MobileNumber, Sat_Time, Mon_To_Fri_Time } = VideoListOfHomePage() //api
+
     return (
         <footer className="bg-skyblue w-full pt-24 lg:pt-36">
             <div className="container lg:px-32 grid lg:grid-cols-2 gap-5 lg:gap-0 py-5">
@@ -35,7 +40,7 @@ const Footer = () => {
                                 Call Us At:
                             </TypographyP>
                             <TypographyP className="text-[17px] text-[secondarylite]">
-                                +65 9230 2663
+                                {MobileNumber}
                             </TypographyP>
                         </div>
                     </div>
@@ -47,10 +52,10 @@ const Footer = () => {
                             </TypographyP>
                             <div className="flex flex-col">
                                 <TypographyP className="text-[17px] text-secondarylite">
-                                    Monday to Friday: 11am - 8pm
+                                    Monday to Friday: {Mon_To_Fri_Time}
                                 </TypographyP>
                                 <TypographyP className="text-[17px] text-secondarylite">
-                                    Saturday: 10am - 4pm
+                                    Saturday: {Sat_Time}
                                 </TypographyP>
                                 <TypographyP className="text-[17px] text-secondarylite">
                                     Sunday and PH: Closed

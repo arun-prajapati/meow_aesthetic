@@ -8,6 +8,13 @@ type VideosData = {
     video: string;
     big_title: string;
     small_title: string;
+    cot_description: string;
+    email: string;
+    mobile: string;
+    mon_fri_time: string;
+    sat_time: string;
+    facebook: string;
+    instagram: string;
     type: string;
     description: string;
     created_at: string;
@@ -24,6 +31,12 @@ export function VideoListOfHomePage() {
     const [listofVideos, setListOfVideos] = useState<VideosData[]>([])
     const [isLoading, setIsLoading] = useState(true)
 
+    const MobileNumber = listofVideos[2]?.mobile
+    const EmailID = listofVideos[2]?.email
+    const Mon_To_Fri_Time = listofVideos[3]?.mon_fri_time
+    const Sat_Time = listofVideos[3]?.sat_time
+    const Facebook = listofVideos[3]?.facebook
+    const Instagram = listofVideos[3]?.instagram
     const homePageVideos = async () => {
         setIsLoading(true)
         try {
@@ -40,6 +53,6 @@ export function VideoListOfHomePage() {
         homePageVideos()
     }, [])
 
-    return { listofVideos, isLoading }
+    return { listofVideos, isLoading, MobileNumber, EmailID, Mon_To_Fri_Time, Sat_Time, Instagram, Facebook }
 
 }

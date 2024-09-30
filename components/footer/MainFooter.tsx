@@ -1,9 +1,14 @@
+"use client"
 import Image from "next/image"
 import TypographyP from "../typography/TypographyP"
 import TypographyH3 from "../typography/TypographyH3"
 import logo from "@/public/assests/logo.png"
+import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi"
 
 const MainFooter = () => {
+
+    const { Sat_Time, Mon_To_Fri_Time } = VideoListOfHomePage() //api
+
     return (
         <footer className="w-full bg-secondarydark text-white">
             <div className="container flex flex-col lg:flex-row gap-14 lg:gap-0 pt-14 lg:pt-24 pb-0 lg:pb-24">
@@ -36,11 +41,11 @@ const MainFooter = () => {
                         <ul className="flex flex-col gap-5 text-[#FFFEFAB3] text-xl lg:text-base">
                             <li className="flex flex-col">
                                 Monday - Friday
-                                <span>11am - 8pm</span>
+                                <span>{Mon_To_Fri_Time}</span>
                             </li >
                             <li className="flex flex-col">
                                 Saturday
-                                <span>11am - 4pm</span>
+                                <span>{Sat_Time}</span>
                             </li>
                             <li className="flex flex-col">
                                 Sunday and PH

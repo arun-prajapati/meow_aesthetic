@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,8 +12,11 @@ import meowlogo from "@/public/assests/meowlogo.png"
 import { TbPhoneCall } from "react-icons/tb";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import TypographyP from "@/components/typography/TypographyP";
+import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi";
 
 const Header = () => {
+
+    const { listofVideos } = VideoListOfHomePage() //api
     return (
         <header className="w-full">
 
@@ -37,14 +41,21 @@ const Header = () => {
 
                     {/* --call for large-screen-- */}
                     <div className="hidden lg:flex items-center gap-2">
-                        <div className="flex flex-col items-end">
-                            <Link href='/'>
-                                <span className="text-currentlink text-xs font-semibold">CALL US AT</span>
-                            </Link>
-                            <TypographyP className="text-2xl font-semibold">
-                                9230 2663
-                            </TypographyP>
-                        </div>
+                        {listofVideos?.map((serviceSection, serviceindex) => (
+                            <>
+                                {serviceSection?.type === "contact_us" && <>
+                                    <div className="flex flex-col items-end" key={serviceindex}>
+                                        <Link href='/'>
+                                            <span className="text-currentlink text-xs font-semibold">CALL US AT</span>
+                                        </Link>
+                                        <TypographyP className="text-2xl font-semibold">
+                                            {serviceSection?.mobile}
+                                        </TypographyP>
+                                    </div>
+                                </>
+                                }
+                            </>
+                        ))}
                         <TbPhoneCall className="text-currentlink w-8 h-8 p-1" />
                     </div>
 
