@@ -15,6 +15,8 @@ type VideosData = {
     sat_time: string;
     facebook: string;
     instagram: string;
+    location: string;
+    address: string;
     type: string;
     description: string;
     created_at: string;
@@ -37,6 +39,9 @@ export function VideoListOfHomePage() {
     const Sat_Time = listofVideos[3]?.sat_time
     const Facebook = listofVideos[3]?.facebook
     const Instagram = listofVideos[3]?.instagram
+    const Location = listofVideos[3]?.location
+    const Address = listofVideos[3]?.address
+
     const homePageVideos = async () => {
         setIsLoading(true)
         try {
@@ -53,6 +58,6 @@ export function VideoListOfHomePage() {
         homePageVideos()
     }, [])
 
-    return { listofVideos, isLoading, MobileNumber, EmailID, Mon_To_Fri_Time, Sat_Time, Instagram, Facebook }
+    return { listofVideos, isLoading, MobileNumber, EmailID, Mon_To_Fri_Time, Sat_Time, Instagram, Facebook, Location, Address }
 
 }
