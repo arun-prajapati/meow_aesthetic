@@ -25,28 +25,36 @@ const KeyProceduresSection = () => {
                 {listofVideos?.length > 0 ? listofVideos?.map((serviceSection, serviceindex) => (
                     <>
                         {serviceSection?.type === "service" && <>
-                            <video
-                                key={serviceindex}
-                                muted
-                                playsInline
-                                loop
-                                autoPlay
-                                className="h-full w-full absolute top-0 object-cover hidden md:block rounded-2xl z-10"
-                            >
-                                <source
-                                    src={serviceSection?.video}
-                                    type="video/mp4"
+                            {serviceSection?.img_type === "video" ?
+                                <video
+                                    key={serviceindex}
+                                    autoPlay
+                                    muted
+                                    playsInline
+                                    loop
+                                    className="h-full w-full absolute top-0 object-cover rounded-2xl z-10"
+                                >
+                                    <source
+                                        src={serviceSection?.video}
+                                        type="video/mp4"
+                                        media="(min-width: 601px)"
+                                    />
+                                    <source
+                                        src={serviceSection?.mobile_video}
+                                        type="video/mp4"
+                                        media="(max-width: 600px)"
+                                    />
+                                </video>
+                                :
+                                <Image
+                                    src={serviceSection?.video ? serviceSection?.video : keyprocedures}
+                                    alt="keyprocedures"
+                                    className="h-full w-full absolute top-0 object-cover rounded-2xl"
                                 />
-                            </video>
+                            }
 
                             {/* mask layer */}
                             <div className="absolute z-20 top-0 left-0 w-full h-full bg-black opacity-30 rounded-2xl" />
-
-                            <Image
-                                src={keyprocedures}
-                                alt="keyprocedures"
-                                className="h-full w-full absolute top-0 object-cover md:hidden block rounded-2xl"
-                            />
                             <div className="container w-full flex flex-col py-24 z-50 relative 2xl:px-0">
                                 <div className="flex flex-col gap-5 text-white pb-14">
                                     <TypographyP className="flex items-center gap-4 text-2xl">

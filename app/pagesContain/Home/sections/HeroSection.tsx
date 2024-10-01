@@ -5,8 +5,10 @@ import TypographyH4 from "@/components/typography/TypographyH4"
 import TypographyP from "@/components/typography/TypographyP"
 import { Button } from "@/components/ui/button"
 import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi"
+import Image from "next/image"
 import Link from "next/link"
 import { TbLoaderQuarter } from "react-icons/tb"
+import keyprocedures from "@/public/assests/keyprocedures.webp"
 
 const HeroSection = () => {
 
@@ -24,24 +26,38 @@ const HeroSection = () => {
                             {listofVideos?.map((heroSectionData, herosectionindex) => (
                                 <>
                                     {heroSectionData?.type === "hero" && <>
-                                        <video
-                                            key={herosectionindex}
-                                            muted
-                                            playsInline
-                                            loop
-                                            autoPlay
-                                            className="absolute top-0 left-0 h-svh w-full object-cover"
-                                        >
-                                            <source
-                                                src={heroSectionData?.video}
-                                                type="video/mp4"
+                                        {heroSectionData?.img_type === "video" ?
+                                            <video
+                                                key={herosectionindex}
+                                                autoPlay
+                                                muted
+                                                playsInline
+                                                loop
+                                                className="h-full w-full absolute top-0 object-cover z-10"
+                                            >
+                                                <source
+                                                    src={heroSectionData?.video}
+                                                    type="video/mp4"
+                                                    media="(min-width: 601px)"
+                                                />
+                                                <source
+                                                    src={heroSectionData?.mobile_video}
+                                                    type="video/mp4"
+                                                    media="(max-width: 600px)"
+                                                />
+                                            </video>
+                                            :
+                                            <Image
+                                                src={heroSectionData?.video ? heroSectionData?.video : keyprocedures}
+                                                alt="keyprocedures"
+                                                className="h-full w-full absolute top-0 object-cover"
                                             />
-                                        </video>
+                                        }
 
-                                        < div className="absolute top-0 left-0 w-full h-full bg-black opacity-50" />
+                                        {/* mask layer */}
+                                        < div className="absolute z-20 top-0 left-0 w-full h-full bg-black opacity-50" />
 
                                         < div className="container h-screen flex flex-col justify-center gap-3 lg:gap-5 text-white relative z-30 2xl:px-0" >
-
                                             <TypographyH4 className="flex items-center mt-10">
                                                 {heroSectionData?.small_title}
                                             </TypographyH4>

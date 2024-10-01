@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 type VideosData = {
     id: number;
     video: string;
+    mobile_video: string;
     big_title: string;
     small_title: string;
     cot_description: string;
@@ -17,6 +18,7 @@ type VideosData = {
     instagram: string;
     location: string;
     address: string;
+    img_type: string;
     type: string;
     description: string;
     created_at: string;
