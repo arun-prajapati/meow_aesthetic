@@ -2,9 +2,7 @@
 import Image from "next/image"
 import aboutzion from "@/public/assests/aboutzion.jpg"
 import TypographyP from "@/components/typography/TypographyP"
-import { FiPlus } from "react-icons/fi"
 import TypographyH1 from "@/components/typography/TypographyH1"
-import TypographyH4 from "@/components/typography/TypographyH4"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useRef } from "react"
@@ -32,7 +30,7 @@ const AboutZionSection = () => {
                 {listofVideos?.length > 0 ? listofVideos?.map((serviceSection, serviceindex) => (
                     <>
                         {serviceSection?.type === "about_us" && <>
-                            <div className="order-2 lg:order-1 mb-[75px] mx-6 lg:mx-0">
+                            <div className="order-2 lg:order-1 mb-[75px] mx-6 lg:mx-0" key={serviceindex}>
                                 <Image
                                     src={serviceSection?.video ? serviceSection?.video : aboutzion}
                                     alt="meow asthetic clinic"

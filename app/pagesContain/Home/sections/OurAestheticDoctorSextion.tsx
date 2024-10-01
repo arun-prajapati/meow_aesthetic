@@ -34,9 +34,8 @@ const OurAestheticDoctorSextion = () => {
                             <>
                                 <div className="aspect-square 2xl:min-w-[650px] 2xl:max-h-[500px] order-2 lg:order-1 mb-[75px] mx-6 lg:mx-0" key={doctorIndex}>
                                     <Image
-                                        src={ouraestheticdoctor}
-                                        // src={doctorsData?.image ? doctorsData?.image : ouraestheticdoctor}
-                                        alt="meow asthetic clinic"
+                                        src={doctorsData?.image ? `https://admin-panel.meowaesthetics.com/${doctorsData?.image}` : ouraestheticdoctor}
+                                        alt="Dr Meow"
                                         width={500}
                                         height={500}
                                         quality={100}
@@ -46,7 +45,6 @@ const OurAestheticDoctorSextion = () => {
 
                                 <div className="mt-20 lg:mt-0 py-5 px-6 lg:px-0 flex flex-col gap-5 order-1 lg:order-2">
                                     <TypographyP className="flex items-center gap-4">
-                                        <FiPlus />
                                         OUR AESTHETIC DOCTOR
                                     </TypographyP>
                                     <TypographyH1 className="text-5xl font-medium font-plusjakartasans">
