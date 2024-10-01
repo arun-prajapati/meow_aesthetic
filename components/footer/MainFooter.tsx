@@ -7,7 +7,7 @@ import { VideoListOfHomePage } from "@/lib/hooks/HomePageApi"
 
 const MainFooter = () => {
 
-    const { Sat_Time, Mon_To_Fri_Time } = VideoListOfHomePage() //api
+    const { Sat_Time, Mon_To_Fri_Time, Location, Address } = VideoListOfHomePage() //api
 
     return (
         <footer className="w-full bg-secondarydark text-white">
@@ -57,32 +57,15 @@ const MainFooter = () => {
                         <TypographyH3>Location</TypographyH3>
                         <ul className="flex flex-col gap-1 lg:gap-5 text-[#FFFEFAB3] text-xl lg:text-base">
                             <li>
-                                Sure woods square tower 1, 05-62 S737715
+                                {Address}
                             </li>
                         </ul>
                         <div className="w-full flex items-center justify-center py-5">
                             <iframe
                                 className="lg:w-[250px] lg:h-[250px]"
-                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Sure%20woods%20square%20tower%201,%2005-62%20S737715+(Sure%20woods%20square%20tower%201,%2005-62%20S737715)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                src={Location}
                             >
                             </iframe>
-                            {/* <div className="gmap_canvas">
-                                <iframe
-                                    className="gmap_iframe"
-                                    width="100%"
-                                    frameBorder={0}
-                                    scrolling="no"
-                                    marginHeight={0}
-                                    marginWidth={0}
-                                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Sure%20woods%20square%20tower%201,%2005-62%20S737715+(Sure%20woods%20square%20tower%201,%2005-62%20S737715)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                />
-                            </div>
-                            <style
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        ".mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:300px!important;}"
-                                }}
-                            /> */}
                         </div>
                     </div>
                 </div>
