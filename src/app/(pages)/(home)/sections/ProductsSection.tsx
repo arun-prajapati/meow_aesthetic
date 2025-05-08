@@ -45,7 +45,7 @@ const ProductsSection = ({ data }: { data: Product[] }) => {
           prevEl: ".swiper-button-prev-custom",
           nextEl: ".swiper-button-next-custom",
         }}
-        spaceBetween={5}
+        spaceBetween={10}
         slidesPerView={5}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
@@ -67,7 +67,7 @@ const ProductsSection = ({ data }: { data: Product[] }) => {
       >
         {data?.length > 0 ? (
           data.map((e, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="w-full">
               <ShopProductCard
                 title={e.title}
                 description={e.description}
@@ -83,7 +83,7 @@ const ProductsSection = ({ data }: { data: Product[] }) => {
 
       {/* Right Button */}
       <div
-        className={`swiper-button-next-custom z-10 cursor-pointer w-10 h-10 flex items-center justify-center absolute right-0 transition-all duration-300 ease-in-out
+        className={`swiper-button-next-custom z-10 cursor-pointer w-10 h-10 flex items-center justify-center absolute -right-10 transition-all duration-300 ease-in-out
         ${isEnd ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

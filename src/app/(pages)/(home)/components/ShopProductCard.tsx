@@ -36,9 +36,9 @@ const ShopProductCard = ({
 
   return (
     <>
-      <div className="flex flex-col gap-1 relative max-w-[250px]">
+      <div className="flex flex-col gap-1 relative w-full">
         <div
-          className="relative aspect-square size-60 sm:size-full overflow-hidden cursor-pointer group bg-slate-100"
+          className="relative aspect-square w-full overflow-hidden cursor-pointer group bg-slate-100"
           onClick={() => setShowPopup(!showPopup)}
         >
           <Image
