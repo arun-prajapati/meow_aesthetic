@@ -36,7 +36,7 @@ const HeroSection = ({
   const selectedUrl = isMobile ? mobileUrl : desktopUrl;
 
   return (
-    <section className="w-full min-w-sm h-full min-h-[82vh] relative">
+    <section className="w-full h-full min-h-[82vh] relative">
       {isVideo(selectedUrl) ? (
         <video
           autoPlay
