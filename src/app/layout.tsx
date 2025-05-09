@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Meow Aesthetic Clinic",
+  title: "Meow Aesthetics & Luxury",
 };
 
 export default function RootLayout({
